@@ -10,7 +10,7 @@ function createABigTriangle(gl) {
 
   var triangleVAO = TriangleCache.get(gl)
   if(!triangleVAO || !gl.isBuffer(triangleVAO._triangleBuffer.buffer)) {
-    var buf = createBuffer(gl, new Float32Array([-1, -1, -1, 4, 4, -1]))
+    var buf = createBuffer(gl, new Float32Array([-1, -1, -1, 4, 4, -1]), gl.ARRAY_BUFFER, gl.STATIC_DRAW)
     triangleVAO = createVAO(gl, [
       { buffer: buf,
         type: gl.FLOAT,
